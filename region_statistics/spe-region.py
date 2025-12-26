@@ -26,10 +26,11 @@ parser = argparse.ArgumentParser(description="Process perf data using spe-parser
 parser.add_argument("perf_data_file", help="Path to the perf.data file")
 args = parser.parse_args()
 
-filename = args.perf_data_file
+filepath = args.perf_data_file
+filename = os.path.basename(filepath)
 
 # Validate input file
-file_exists(filename)
+file_exists(filepath)
 
 
 # Remove existing files 
